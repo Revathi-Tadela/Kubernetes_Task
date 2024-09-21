@@ -1,0 +1,236 @@
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-35-237 ~]$ sudo yum update -y
+Last metadata expiration check: 0:00:03 ago on Sat Sep 21 09:34:28 2024.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[ec2-user@ip-172-31-35-237 ~]$ sudo yum install -y docker
+Last metadata expiration check: 0:00:14 ago on Sat Sep 21 09:34:28 2024.
+Dependencies resolved.
+=======================================================================================================================================================================
+ Package                                        Architecture                   Version                                       Repository                           Size
+=======================================================================================================================================================================
+Installing:
+ docker                                         x86_64                         25.0.6-1.amzn2023.0.2                         amazonlinux                          44 M
+Installing dependencies:
+ containerd                                     x86_64                         1.7.20-1.amzn2023.0.1                         amazonlinux                          35 M
+ iptables-libs                                  x86_64                         1.8.8-3.amzn2023.0.2                          amazonlinux                         401 k
+ iptables-nft                                   x86_64                         1.8.8-3.amzn2023.0.2                          amazonlinux                         183 k
+ libcgroup                                      x86_64                         3.0-1.amzn2023.0.1                            amazonlinux                          75 k
+ libnetfilter_conntrack                         x86_64                         1.0.8-2.amzn2023.0.2                          amazonlinux                          58 k
+ libnfnetlink                                   x86_64                         1.0.1-19.amzn2023.0.2                         amazonlinux                          30 k
+ libnftnl                                       x86_64                         1.2.2-2.amzn2023.0.2                          amazonlinux                          84 k
+ pigz                                           x86_64                         2.5-1.amzn2023.0.3                            amazonlinux                          83 k
+ runc                                           x86_64                         1.1.13-1.amzn2023.0.1                         amazonlinux                         3.2 M
+
+Transaction Summary
+=======================================================================================================================================================================
+Install  10 Packages
+
+Total download size: 84 M
+Installed size: 317 M
+Downloading Packages:
+(1/10): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                                  3.7 MB/s | 401 kB     00:00    
+(2/10): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                                   6.0 MB/s | 183 kB     00:00    
+(3/10): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                                        1.9 MB/s |  75 kB     00:00    
+(4/10): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                                         2.1 MB/s |  58 kB     00:00    
+(5/10): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                                  769 kB/s |  30 kB     00:00    
+(6/10): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                                       2.1 MB/s |  84 kB     00:00    
+(7/10): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                             2.1 MB/s |  83 kB     00:00    
+(8/10): containerd-1.7.20-1.amzn2023.0.1.x86_64.rpm                                                                                     49 MB/s |  35 MB     00:00    
+(9/10): runc-1.1.13-1.amzn2023.0.1.x86_64.rpm                                                                                          7.7 MB/s | 3.2 MB     00:00    
+(10/10): docker-25.0.6-1.amzn2023.0.2.x86_64.rpm                                                                                        41 MB/s |  44 MB     00:01    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                   73 MB/s |  84 MB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                               1/1 
+  Installing       : runc-1.1.13-1.amzn2023.0.1.x86_64                                                                                                            1/10 
+  Installing       : containerd-1.7.20-1.amzn2023.0.1.x86_64                                                                                                      2/10 
+  Running scriptlet: containerd-1.7.20-1.amzn2023.0.1.x86_64                                                                                                      2/10 
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                               3/10 
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                                         4/10 
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                                    5/10 
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                           6/10 
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                                    7/10 
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                     8/10 
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                     8/10 
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                                          9/10 
+  Running scriptlet: docker-25.0.6-1.amzn2023.0.2.x86_64                                                                                                         10/10 
+  Installing       : docker-25.0.6-1.amzn2023.0.2.x86_64                                                                                                         10/10 
+  Running scriptlet: docker-25.0.6-1.amzn2023.0.2.x86_64                                                                                                         10/10 
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+  Verifying        : containerd-1.7.20-1.amzn2023.0.1.x86_64                                                                                                      1/10 
+  Verifying        : docker-25.0.6-1.amzn2023.0.2.x86_64                                                                                                          2/10 
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                                    3/10 
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                                     4/10 
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                                          5/10 
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                           6/10 
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                                    7/10 
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                                         8/10 
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                               9/10 
+  Verifying        : runc-1.1.13-1.amzn2023.0.1.x86_64                                                                                                           10/10 
+
+Installed:
+  containerd-1.7.20-1.amzn2023.0.1.x86_64               docker-25.0.6-1.amzn2023.0.2.x86_64              iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                     
+  iptables-nft-1.8.8-3.amzn2023.0.2.x86_64              libcgroup-3.0-1.amzn2023.0.1.x86_64              libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64            
+  libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64             libnftnl-1.2.2-2.amzn2023.0.2.x86_64             pigz-2.5-1.amzn2023.0.3.x86_64                                
+  runc-1.1.13-1.amzn2023.0.1.x86_64                    
+
+Complete!
+[ec2-user@ip-172-31-35-237 ~]$ sudo service docker start
+Redirecting to /bin/systemctl start docker.service
+[ec2-user@ip-172-31-35-237 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-35-237 ~]$ sudo yum install conntrack
+Last metadata expiration check: 0:01:03 ago on Sat Sep 21 09:34:28 2024.
+Dependencies resolved.
+=======================================================================================================================================================================
+ Package                                        Architecture                   Version                                       Repository                           Size
+=======================================================================================================================================================================
+Installing:
+ conntrack-tools                                x86_64                         1.4.6-2.amzn2023.0.2                          amazonlinux                         208 k
+Installing dependencies:
+ libnetfilter_cthelper                          x86_64                         1.0.0-21.amzn2023.0.2                         amazonlinux                          24 k
+ libnetfilter_cttimeout                         x86_64                         1.0.0-19.amzn2023.0.2                         amazonlinux                          24 k
+ libnetfilter_queue                             x86_64                         1.0.5-2.amzn2023.0.2                          amazonlinux                          30 k
+
+Transaction Summary
+=======================================================================================================================================================================
+Install  4 Packages
+
+Total download size: 285 k
+Installed size: 800 k
+Is this ok [y/N]: y
+Downloading Packages:
+(1/4): libnetfilter_cttimeout-1.0.0-19.amzn2023.0.2.x86_64.rpm                                                                         386 kB/s |  24 kB     00:00    
+(2/4): libnetfilter_cthelper-1.0.0-21.amzn2023.0.2.x86_64.rpm                                                                          354 kB/s |  24 kB     00:00    
+(3/4): libnetfilter_queue-1.0.5-2.amzn2023.0.2.x86_64.rpm                                                                              1.7 MB/s |  30 kB     00:00    
+(4/4): conntrack-tools-1.4.6-2.amzn2023.0.2.x86_64.rpm                                                                                 2.1 MB/s | 208 kB     00:00    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                  1.8 MB/s | 285 kB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                               1/1 
+  Installing       : libnetfilter_queue-1.0.5-2.amzn2023.0.2.x86_64                                                                                                1/4 
+  Installing       : libnetfilter_cttimeout-1.0.0-19.amzn2023.0.2.x86_64                                                                                           2/4 
+  Installing       : libnetfilter_cthelper-1.0.0-21.amzn2023.0.2.x86_64                                                                                            3/4 
+  Installing       : conntrack-tools-1.4.6-2.amzn2023.0.2.x86_64                                                                                                   4/4 
+  Running scriptlet: conntrack-tools-1.4.6-2.amzn2023.0.2.x86_64                                                                                                   4/4 
+  Verifying        : conntrack-tools-1.4.6-2.amzn2023.0.2.x86_64                                                                                                   1/4 
+  Verifying        : libnetfilter_cthelper-1.0.0-21.amzn2023.0.2.x86_64                                                                                            2/4 
+  Verifying        : libnetfilter_cttimeout-1.0.0-19.amzn2023.0.2.x86_64                                                                                           3/4 
+  Verifying        : libnetfilter_queue-1.0.5-2.amzn2023.0.2.x86_64                                                                                                4/4 
+
+Installed:
+  conntrack-tools-1.4.6-2.amzn2023.0.2.x86_64         libnetfilter_cthelper-1.0.0-21.amzn2023.0.2.x86_64      libnetfilter_cttimeout-1.0.0-19.amzn2023.0.2.x86_64     
+  libnetfilter_queue-1.0.5-2.amzn2023.0.2.x86_64     
+
+Complete!
+[ec2-user@ip-172-31-35-237 ~]$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   138  100   138    0     0   1779      0 --:--:-- --:--:-- --:--:--  1792
+100 53.7M  100 53.7M    0     0   110M      0 --:--:-- --:--:-- --:--:--  138M
+[ec2-user@ip-172-31-35-237 ~]$ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+[ec2-user@ip-172-31-35-237 ~]$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 99.0M  100 99.0M    0     0  34.8M      0  0:00:02  0:00:02 --:--:-- 34.8M
+[ec2-user@ip-172-31-35-237 ~]$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+[ec2-user@ip-172-31-35-237 ~]$ minikube start --driver=docker
+* minikube v1.34.0 on Amazon 2023.5.20240916 (xen/amd64)
+* Using the docker driver based on user configuration
+
+X Exiting due to PROVIDER_DOCKER_NEWGRP: "docker version --format <no value>-<no value>:<no value>" exit status 1: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.44/version": dial unix /var/run/docker.sock: connect: permission denied
+* Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker'
+* Documentation: https://docs.docker.com/engine/install/linux-postinstall/
+
+[ec2-user@ip-172-31-35-237 ~]$ minikube start --driver=docker
+* minikube v1.34.0 on Amazon 2023.5.20240916 (xen/amd64)
+* Using the docker driver based on user configuration
+
+X Exiting due to PROVIDER_DOCKER_NEWGRP: "docker version --format <no value>-<no value>:<no value>" exit status 1: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.44/version": dial unix /var/run/docker.sock: connect: permission denied
+* Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker'
+* Documentation: https://docs.docker.com/engine/install/linux-postinstall/
+
+[ec2-user@ip-172-31-35-237 ~]$ minikube status
+* Profile "minikube" not found. Run "minikube profile list" to view all profiles.
+  To start a cluster, run: "minikube start"
+[ec2-user@ip-172-31-35-237 ~]$ sudo usermod -aG docker $USER
+[ec2-user@ip-172-31-35-237 ~]$ newgrp docker
+[ec2-user@ip-172-31-35-237 ~]$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[ec2-user@ip-172-31-35-237 ~]$ minikube start --driver=docker
+* minikube v1.34.0 on Amazon 2023.5.20240916 (xen/amd64)
+* Using the docker driver based on user configuration
+* Using Docker driver with root privileges
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.45 ...
+* Downloading Kubernetes v1.31.0 preload ...
+    > preloaded-images-k8s-v18-v1...:  326.69 MiB / 326.69 MiB  100.00% 29.44 M
+    > gcr.io/k8s-minikube/kicbase...:  487.89 MiB / 487.90 MiB  100.00% 37.49 M
+* Creating docker container (CPUs=2, Memory=2200MB) ...
+* Preparing Kubernetes v1.31.0 on Docker 27.2.0 ...
+  - Generating certificates and keys ...
+  - Booting up control plane ...
+  - Configuring RBAC rules ...
+* Configuring bridge CNI (Container Networking Interface) ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+[ec2-user@ip-172-31-35-237 ~]$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+[ec2-user@ip-172-31-35-237 ~]$ docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS          PORTS                                                                                                                                  NAMES
+e93317c1f248   gcr.io/k8s-minikube/kicbase:v0.0.45   "/usr/local/bin/entr…"   48 seconds ago   Up 47 seconds   127.0.0.1:32772->22/tcp, 127.0.0.1:32771->2376/tcp, 127.0.0.1:32770->5000/tcp, 127.0.0.1:32769->8443/tcp, 127.0.0.1:32768->32443/tcp   minikube
+[ec2-user@ip-172-31-35-237 ~]$ kubectl create namespace my-namespace
+namespace/my-namespace created
+[ec2-user@ip-172-31-35-237 ~]$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   55s
+kube-node-lease   Active   55s
+kube-public       Active   55s
+kube-system       Active   55s
+my-namespace      Active   12s
+[ec2-user@ip-172-31-35-237 ~]$ kubectl run nginx --image=nginx --namespace=my-namespace
+pod/nginx created
+[ec2-user@ip-172-31-35-237 ~]$ kubectl config set-context --current --namespace=my-namespace
+Context "minikube" modified.
+[ec2-user@ip-172-31-35-237 ~]$ kubectl delete namespace my-namespace
+namespace "my-namespace" deleted
+
+[ec2-user@ip-172-31-35-237 ~]$ 
+[ec2-user@ip-172-31-35-237 ~]$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   2m29s
+kube-node-lease   Active   2m29s
+kube-public       Active   2m29s
+kube-system       Active   2m29s
+[ec2-user@ip-172-31-35-237 ~]$ minikube stop
+* Stopping node "minikube"  ...
+* Powering off "minikube" via SSH ...
+* 1 node stopped.
+[ec2-user@ip-172-31-35-237 ~]$ 
