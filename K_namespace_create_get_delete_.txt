@@ -1,0 +1,28 @@
+[ec2-user@ip-172-31-35-237 ~]$ kubectl create namespace my-namespace
+namespace/my-namespace created
+[ec2-user@ip-172-31-35-237 ~]$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   55s
+kube-node-lease   Active   55s
+kube-public       Active   55s
+kube-system       Active   55s
+my-namespace      Active   12s
+[ec2-user@ip-172-31-35-237 ~]$ kubectl run nginx --image=nginx --namespace=my-namespace
+pod/nginx created
+[ec2-user@ip-172-31-35-237 ~]$ kubectl config set-context --current --namespace=my-namespace
+Context "minikube" modified.
+[ec2-user@ip-172-31-35-237 ~]$ kubectl delete namespace my-namespace
+namespace "my-namespace" deleted
+
+[ec2-user@ip-172-31-35-237 ~]$ 
+[ec2-user@ip-172-31-35-237 ~]$ kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   2m29s
+kube-node-lease   Active   2m29s
+kube-public       Active   2m29s
+kube-system       Active   2m29s
+[ec2-user@ip-172-31-35-237 ~]$ minikube stop
+* Stopping node "minikube"  ...
+* Powering off "minikube" via SSH ...
+* 1 node stopped.
+[ec2-user@ip-172-31-35-237 ~]$ 
